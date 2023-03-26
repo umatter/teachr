@@ -1,0 +1,36 @@
+citEntry(
+  entry = "Manual",
+  title = "teachr: LLM Integration to Teach You R",
+  author = list(
+    given = "Ulrich",
+    family = "Matter",
+    email = "umatter@protonmail.com",
+    role = c("aut", "cre"),
+    comment = "ORCID: 0000-0002-2781-4480"
+  ),
+  authorList = list(
+    list(
+      given = "Jonathan",
+      family = "Chassot",
+      email = "jonathan.chassot@unisg.ch",
+      role = "aut"
+    )
+  ),
+  organization = NULL,
+  address = NULL,
+  edition = NULL,
+  journal = NULL,
+  publisher = NULL,
+  school = NULL,
+  institution = NULL,
+  type = NULL,
+  volume = NULL,
+  number = NULL,
+  year = "2023",
+  pages = NULL,
+  note = "R package version 0.0.0.9000",
+  doi = NULL,
+  textVersion = paste(
+
+  )
+)

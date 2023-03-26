@@ -1,0 +1,10 @@
+Package: teachr
+Title: LLM Integration to Teach You R
+Version: 0.0.0.9000
+Authors@R: c(person("Ulrich", "Matter", email = "umatter@protonmail.com", role = c("aut", "cre")), person("Jonathan", "Chassot", email = "jonathan.chassot@unisg.ch", role = "aut"))
+Maintainer: Jonathan Chassot <jonathan.chassot@unisg.ch>
+Description: Get feedback on your R code and exercises, autograde exercises, create exercises.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
