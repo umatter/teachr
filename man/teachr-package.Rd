@@ -6,6 +6,24 @@
 \alias{teachr-package}
 \title{teachr: LLM Integration to Teach You R}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 Get feedback on your R code and exercises, autograde exercises, create exercises.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://umatter.github.io/teachr}
+}
+
+}
+\author{
+\strong{Maintainer}: Ulrich Matter \email{umatter@protonmail.com}
+
+Authors:
+\itemize{
+  \item Jonathan Chassot \email{jonathan.chassot@unisg.ch}
+}
+
 }
 \keyword{internal}
