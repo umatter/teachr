@@ -5,6 +5,7 @@
 #'
 #' @param code A character string that represents the code that the user wants
 #' to explain.
+#' @param ... Additional arguments to pass to OpenAIR's chat_completion
 #'
 #' @return NULL
 #'
@@ -12,7 +13,7 @@
 #' explain_code("for(i in 1:10) { print(i) }")
 #'
 #' @export
-explain_code <- function(code) {
+explain_code <- function(code, ...) {
 
   explanation <-
     lapply(code, FUN = function(code) {
@@ -22,7 +23,7 @@ explain_code <- function(code) {
         sprintf(fmt = explain_code_input$content[2], code)
 
       # Chat
-      resp <- OpenAIR::chat_completion(explain_code_input)
+      resp <- OpenAIR::chat_completion(explain_code_input, ...)
       total_tokens_used <- OpenAIR::usage(resp)$total_tokens
       message("Total tokens used: ", total_tokens_used)
 

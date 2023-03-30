@@ -9,6 +9,7 @@
 #' to accomplish.
 #' @param code A character string that represents the code that the user has
 #' written.
+#' @param ... Additional arguments to pass to OpenAIR's chat_completion
 #'
 #' @return A data frame with two columns:
 #' \itemize{
@@ -25,7 +26,7 @@
 #' { print('Buzz') } else { print(i) } }")
 #'
 #' @export
-feedback <- function(task, code) {
+feedback <- function(task, code, ...) {
 
   requireNamespace("dplyr", quietly = TRUE)
 
@@ -37,7 +38,7 @@ feedback <- function(task, code) {
         sprintf(fmt = feedback_input$content[2], task, code)
 
       # Chat
-      resp <- OpenAIR::chat_completion(feedback_input)
+      resp <- OpenAIR::chat_completion(feedback_input, ...)
       total_tokens_used <- OpenAIR::usage(resp)$total_tokens
       message("Total tokens used: ", total_tokens_used)
 
