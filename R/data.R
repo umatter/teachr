@@ -30,3 +30,13 @@
 #' calls.
 #' @source Contributed by jldc
 "compare_solutions_input"
+
+#' Input: message content template for add_comments()
+#'
+#' This message content serves as user input for the add_comments function.
+#'
+#' @format ## `add_comments_input`
+#' A data frame with 2 rows and 2 columns representing the message object in API
+#' calls.
+#' @source Contributed by jldc
+"add_comments_input"
