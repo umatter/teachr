@@ -14,7 +14,7 @@
 #'
 #' This message content serves as user input for the feedback function.
 #'
-#' @format ## `feedback_input`
+#' @format ## `explain_code_input`
 #' A data frame with 2 rows and 2 columns representing the message object in API
 #' calls.
 #' @source Contributed by jldc
