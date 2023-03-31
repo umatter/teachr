@@ -5,6 +5,7 @@
 #'
 #' @param code A character string that represents the code that the user wants
 #' to comment.
+#' @param ... Additional arguments to pass to OpenAIR's chat_completion
 #'
 #' @return A character string that represents the commented code.
 #'
@@ -15,7 +16,7 @@
 #' { print('Buzz') } else { print(i) } }")
 #'
 #' @export
-add_comments <- function(code) {
+add_comments <- function(code, ...) {
 
   requireNamespace("dplyr", quietly = TRUE)
 
@@ -27,7 +28,7 @@ add_comments <- function(code) {
         sprintf(fmt = add_comments_input$content[2], code)
 
       # Chat
-      resp <- OpenAIR::chat_completion(add_comments_input)
+      resp <- OpenAIR::chat_completion(add_comments_input, ...)
       total_tokens_used <- OpenAIR::usage(resp)$total_tokens
       message("Total tokens used: ", total_tokens_used)
 
