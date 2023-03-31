@@ -17,3 +17,5 @@ Imports:
 Remotes:
     umatter/OpenAIR
 URL: https://umatter.github.io/teachr
+LazyData: true
+
