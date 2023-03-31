@@ -6,7 +6,7 @@
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of **teachr** is to provide a comprehensive and interactive learning experience for students who are learning to code, by leveraging the power of [OpenAI API](https://github.com/umatter/openair) to generate explanations, and personalized feedback. **teachr** aims to empower learners by offering tailored learning paths, real-time code assessments, and clear, step-by-step guidance in understanding complex code snippets. By fostering an interactive, dynamic, and engaging learning environment, **teachr** aims to accelerate learning and development for students, equipping them with the confidence, knowledge, and skills they need to become proficient coders.
+The goal of **teachr** is to provide a comprehensive and interactive learning experience for students who are learning to code, by leveraging the power of [OpenAIR](https://github.com/umatter/openair) to generate explanations, and personalized feedback. **teachr** aims to empower learners by offering tailored learning paths, real-time code assessments, and clear, step-by-step guidance in understanding complex code snippets. By fostering an interactive, dynamic, and engaging learning environment, **teachr** aims to accelerate learning and development for students, equipping them with the confidence, knowledge, and skills they need to become proficient coders.
 
 ## Installation
 
@@ -37,7 +37,11 @@ explain_code("A %*% B")
 ```
 
 ``` 
-In R, the `%*%` operator is used for matrix multiplication. The code `A %*% B` performs matrix multiplication between two matrices A and B, and it returns the resulting product. The matrices should be compatible for matrix multiplication, meaning the number of columns in the first matrix (A) should match the number of rows in the second matrix (B).
+In R, the `%*%` operator is used for matrix multiplication. 
+The code `A %*% B` performs matrix multiplication between two matrices A and B, 
+and it returns the resulting product. The matrices should be compatible for matrix 
+multiplication, meaning the number of columns in the first matrix (A) should match 
+the number of rows in the second matrix (B).
 
 For a deeper understanding, let's look at an example:
 
@@ -59,7 +63,8 @@ After the operations, the resulting product will be:
 [ 19  22 ]
 [ 43  50 ]
 
-It's important to note that matrix multiplication is NOT element-wise multiplication. It follows the rules of linear algebra, as demonstrated in the example."
+It's important to note that matrix multiplication is NOT element-wise multiplication. 
+It follows the rules of linear algebra, as demonstrated in the example."
 ```
 
 ``` r
@@ -75,3 +80,42 @@ feedback(
 |--:|:--|
 | NA    | "A more efficient way to generate the powers of 2 would be to use vectorized operations and the '2^n' formula." |
 | 1     | "Use the ':' operator to form a sequence of powers and then apply the power operation to generate the corresponding powers of 2." |
+
+
+``` r
+# Add comments to your code
+add_comments("for(i in 1:100) { 
+    if(i %% 3 == 0 && i %% 5 == 0) { 
+        print('FizzBuzz') 
+    } else if(i %% 3 == 0) { 
+        print('Fizz') 
+    } else if(i %% 5 == 0) { 
+        print('Buzz') 
+    } else { 
+        print(i) 
+    } 
+}")
+```
+
+```R
+# Loop through the numbers 1 to 100
+for(i in 1:100) {
+    # Check if the number is divisible by both 3 and 5
+    if(i %% 3 == 0 && i %% 5 == 0) {
+        # If it is, print 'FizzBuzz'
+        print('FizzBuzz')
+    # If the number is only divisible by 3
+    } else if(i %% 3 == 0) {
+        # Print 'Fizz'
+        print('Fizz')
+    # If the number is only divisible by 5
+    } else if(i %% 5 == 0) {
+        # Print 'Buzz'
+        print('Buzz')
+    # If the number is not divisible by either 3 or 5
+    } else {
+        # Print the number itself
+        print(i)
+    }
+}
+```
