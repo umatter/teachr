@@ -6,11 +6,11 @@
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-The goal of teachr is to ...
+The goal of **teachr** is to provide a comprehensive and interactive learning experience for students who are learning to code, by leveraging the power of [OpenAI API](https://github.com/umatter/openair) to generate explanations, and personalized feedback. **teachr** aims to empower learners by offering tailored learning paths, real-time code assessments, and clear, step-by-step guidance in understanding complex code snippets. By fostering an interactive, dynamic, and engaging learning environment, **teachr** aims to accelerate learning and development for students, equipping them with the confidence, knowledge, and skills they need to become proficient coders.
 
 ## Installation
 
-You can install the development version of teachr from [GitHub](https://github.com/) with:
+You can install the development version of **teachr** from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
