@@ -7,7 +7,7 @@
 #' to explain.
 #' @param ... Additional arguments to pass to OpenAIR's chat_completion
 #'
-#' @return NULL
+#' @return A character string that represents the explanation for the code.
 #'
 #' @examples
 #' explain_code("for(i in 1:10) { print(i) }")
@@ -34,7 +34,6 @@ explain_code <- function(code, ...) {
       return(explanation)
     })
 
-  # Output the message and return NULL
-  message(explanation)
-  return(NULL)
+
+  return(explanation)
 }
