@@ -1,6 +1,6 @@
 if (!nchar(Sys.getenv("OPENAI_API_KEY")) == 0) {
     test_that("Adding comments works", {
-        add_comments(
+        result <- add_comments(
 "for(i in 1:100) { 
     if(i %% 3 == 0 && i %% 5 == 0) { 
         print('FizzBuzz') 
@@ -12,6 +12,7 @@ if (!nchar(Sys.getenv("OPENAI_API_KEY")) == 0) {
         print(i) 
     } 
 }")
+    expect_type(result, "character")
     })
 } else {
     skip("API key not set, skipping test.")

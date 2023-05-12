@@ -14,10 +14,12 @@ r_code <-
 
 if (!nchar(Sys.getenv("OPENAI_API_KEY")) == 0) {
     test_that("Feedback works", {
-        feedback(
+        result <- feedback(
             r_code,
             "Write a function to compute the nth Fibonacci number."
         )
+        expect_type(result, "list")
+        expect_true(all(names(result) == c("lines", "feedback")))
     })
 } else {
     skip("API key not set, skipping test.")

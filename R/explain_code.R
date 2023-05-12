@@ -14,26 +14,18 @@
 #'
 #' @export
 explain_code <- function(code, ...) {
+  # Initial user input
+  explain_code_input$content[2] <-
+    sprintf(fmt = explain_code_input$content[2], code)
 
-  explanation <-
-    lapply(code, FUN = function(code) {
+  # Chat
+  resp <- OpenAIR::chat_completion(explain_code_input, ...)
+  total_tokens_used <- OpenAIR::usage(resp)$total_tokens
+  message("Total tokens used: ", total_tokens_used)
 
-      # Initial user input
-      explain_code_input$content[2] <-
-        sprintf(fmt = explain_code_input$content[2], code)
-
-      # Chat
-      resp <- OpenAIR::chat_completion(explain_code_input, ...)
-      total_tokens_used <- OpenAIR::usage(resp)$total_tokens
-      message("Total tokens used: ", total_tokens_used)
-
-      # Process response
-      msg_resp <- OpenAIR::messages(resp)
-      explanation <- msg_resp$content
-
-      return(explanation)
-    })
-
+  # Process response
+  msg_resp <- OpenAIR::messages(resp)
+  explanation <- msg_resp$content
 
   return(explanation)
 }
