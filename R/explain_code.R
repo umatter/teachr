@@ -10,7 +10,7 @@
 #' @return A character string that represents the explanation for the code.
 #'
 #' @examples
-#' explain_code("for(i in 1:10) { print(i) }")
+#' \dontrun{explain_code("for(i in 1:10) { print(i) }")}
 #'
 #' @export
 explain_code <- function(code, ...) {

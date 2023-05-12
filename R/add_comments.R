@@ -10,11 +10,12 @@
 #' @return A character string that represents the commented code.
 #'
 #' @examples
+#' \dontrun{
 #' add_comments("for(i in 1:100)
 #' { if(i %% 3 == 0 && i %% 5 == 0) { print('FizzBuzz') } else if(i %% 3 == 0)
 #' { print('Fizz') } else if(i %% 5 == 0)
 #' { print('Buzz') } else { print(i) } }")
-#'
+#' }
 #' @export
 add_comments <- function(code, ...) {
 

@@ -12,8 +12,10 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
+    dplyr,
     lifecycle,
-    OpenAIR
+    OpenAIR,
+    readr
 Remotes:
     umatter/OpenAIR
 URL: https://umatter.github.io/teachr

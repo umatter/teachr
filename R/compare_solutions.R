@@ -14,8 +14,10 @@
 #' solution and provides feedback to the user.
 #'
 #' @examples
+#' \dontrun{
 #' compare_solutions("R_code/exercise_1.R", "solutions/exercise_1.R")
-#'
+#' }
+#' 
 #' @export
 compare_solutions <- function(attempt_file, solution_file, ...) {
   comparison_list <- mapply(FUN = function(solution_file, attempt_file) {

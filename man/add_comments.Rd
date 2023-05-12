@@ -4,11 +4,13 @@
 \alias{add_comments}
 \title{Add comments to code}
 \usage{
-add_comments(code)
+add_comments(code, ...)
 }
 \arguments{
 \item{code}{A character string that represents the code that the user wants
 to comment.}
+
+\item{...}{Additional arguments to pass to OpenAIR's chat_completion}
 }
 \value{
 A character string that represents the commented code.
@@ -18,9 +20,10 @@ This function takes a code as input and uses OpenAIR's chat_completion
 function to generate comments for the code.
 }
 \examples{
+\dontrun{
 add_comments("for(i in 1:100)
 { if(i \%\% 3 == 0 && i \%\% 5 == 0) { print('FizzBuzz') } else if(i \%\% 3 == 0)
 { print('Fizz') } else if(i \%\% 5 == 0)
 { print('Buzz') } else { print(i) } }")
-
+}
 }

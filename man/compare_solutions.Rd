@@ -25,6 +25,8 @@ solution. If the user's solution is incorrect, the function will provide
 feedback to the user.
 }
 \examples{
+\dontrun{
 compare_solutions("R_code/exercise_1.R", "solutions/exercise_1.R")
+}
 
 }

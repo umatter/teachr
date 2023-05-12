@@ -1,0 +1,3 @@
+- [ ] `message_only` parameter to decide between message() or returning a string
+- [ ] `string_output` to enforce string output on any call, or rather `df_output` for specific calls?
+- [x] argument propagation everywhere
