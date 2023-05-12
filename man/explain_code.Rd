@@ -20,6 +20,6 @@ This function takes a code as input and uses OpenAIR's chat_completion
 function to generate an explanation for the code.
 }
 \examples{
-explain_code("for(i in 1:10) { print(i) }")
+\dontrun{explain_code("for(i in 1:10) { print(i) }")}
 
 }
