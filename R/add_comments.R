@@ -21,24 +21,18 @@ add_comments <- function(code, ...) {
 
   requireNamespace("dplyr", quietly = TRUE)
 
-  results_list <-
-    mapply(FUN = function(code) {
+  # Initial user input
+  add_comments_input$content[2] <-
+    sprintf(fmt = add_comments_input$content[2], code)
 
-      # Initial user input
-      add_comments_input$content[2] <-
-        sprintf(fmt = add_comments_input$content[2], code)
+  # Chat
+  resp <- OpenAIR::chat_completion(add_comments_input, ...)
+  total_tokens_used <- OpenAIR::usage(resp)$total_tokens
+  message("Total tokens used: ", total_tokens_used)
 
-      # Chat
-      resp <- OpenAIR::chat_completion(add_comments_input, ...)
-      total_tokens_used <- OpenAIR::usage(resp)$total_tokens
-      message("Total tokens used: ", total_tokens_used)
+  # Process response
+  msg_resp <- OpenAIR::messages(resp)
+  comments <- msg_resp$content
 
-      # Process response
-      msg_resp <- OpenAIR::messages(resp)
-      comments <- msg_resp$content
-
-      return(comments)
-    }, code)
-
-  return(results_list)
+  return(comments)
 }
