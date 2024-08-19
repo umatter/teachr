@@ -1,8 +1,8 @@
 if (!nchar(Sys.getenv("OPENAI_API_KEY")) == 0) {
     test_that("Comparing solutions works", {
         result <- compare_solutions(
-            attempt_file = system.file("testing", "example_attempt.R", package = "teachr"),
-            solution_file = system.file("testing", "example_solution.R", package = "teachr")
+            attempt_file = "../../inst/testing/example_attempt.R",
+            solution_file = "../../inst/testing/example_solution.R"
         )
         expect_type(result, "character")
     })
