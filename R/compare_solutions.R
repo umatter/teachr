@@ -8,7 +8,7 @@
 #' that contains the user's solution.
 #' @param solution_file A character string that represents the path to the file
 #' that contains the intended solution.
-#' @param ... Additional arguments to pass to OpenAIR's chat_completion
+#' @param ... Additional arguments to pass to TheOpenAIR's chat_completion
 #'
 #' @return A character string that compares the user's solution to the intended
 #' solution and provides feedback to the user.
@@ -50,12 +50,12 @@ compare_solutions <- function(attempt_file, solution_file, ...) {
       attempt, solution, inputs, user_outputs, intended_outputs)
 
     # Chat
-    resp <- OpenAIR::chat_completion(compare_solutions_input, ...)
-    total_tokens_used <- OpenAIR::usage(resp)$total_tokens
+    resp <- TheOpenAIR::chat_completion(compare_solutions_input, ...)
+    total_tokens_used <- TheOpenAIR::usage(resp)$total_tokens
     message("Total tokens used: ", total_tokens_used)
 
     # Process response
-    msg_resp <- OpenAIR::messages(resp)
+    msg_resp <- TheOpenAIR::messages(resp)
     comparison <- msg_resp$content
 
     return(comparison)
