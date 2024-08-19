@@ -1,11 +1,11 @@
 #' Add comments to code
 #'
-#' This function takes a code as input and uses OpenAIR's chat_completion
+#' This function takes a code as input and uses TheOpenAIR's chat_completion
 #' function to generate comments for the code.
 #'
 #' @param code A character string that represents the code that the user wants
 #' to comment.
-#' @param ... Additional arguments to pass to OpenAIR's chat_completion
+#' @param ... Additional arguments to pass to TheOpenAIR's chat_completion
 #'
 #' @return A character string that represents the commented code.
 #'
@@ -26,12 +26,12 @@ add_comments <- function(code, ...) {
     sprintf(fmt = add_comments_input$content[2], code)
 
   # Chat
-  resp <- OpenAIR::chat_completion(add_comments_input, ...)
-  total_tokens_used <- OpenAIR::usage(resp)$total_tokens
+  resp <- TheOpenAIR::chat_completion(add_comments_input, ...)
+  total_tokens_used <- TheOpenAIR::usage(resp)$total_tokens
   message("Total tokens used: ", total_tokens_used)
 
   # Process response
-  msg_resp <- OpenAIR::messages(resp)
+  msg_resp <- TheOpenAIR::messages(resp)
   comments <- msg_resp$content
 
   return(comments)

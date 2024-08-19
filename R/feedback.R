@@ -2,14 +2,14 @@
 #'
 #' This function takes two arguments: task and code. It returns a processed
 #' feedback data frame based on the user input of code and task. The feedback
-#' is obtained by using OpenAIR's chat_completion function and processing the
+#' is obtained by using TheOpenAIR's chat_completion function and processing the
 #' response.
 #'
 #' @param task A character string that represents the task the user is trying
 #' to accomplish.
 #' @param code A character string that represents the code that the user has
 #' written.
-#' @param ... Additional arguments to pass to OpenAIR's chat_completion
+#' @param ... Additional arguments to pass to TheOpenAIR's chat_completion
 #'
 #' @return A data frame with two columns:
 #' \itemize{
@@ -40,12 +40,12 @@ feedback <- function(task, code, ...) {
         sprintf(fmt = feedback_input$content[2], task, code)
 
       # Chat
-      resp <- OpenAIR::chat_completion(feedback_input, ...)
-      total_tokens_used <- OpenAIR::usage(resp)$total_tokens
+      resp <- TheOpenAIR::chat_completion(feedback_input, ...)
+      total_tokens_used <- TheOpenAIR::usage(resp)$total_tokens
       message("Total tokens used: ", total_tokens_used)
 
       # Process response
-      msg_resp <- OpenAIR::messages(resp)
+      msg_resp <- TheOpenAIR::messages(resp)
       feedback <- readr::read_csv(msg_resp$content)
 
       return(feedback)

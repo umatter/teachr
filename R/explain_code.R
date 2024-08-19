@@ -1,11 +1,11 @@
 #' Explain Code using OpenAI's chat_completion function
 #'
-#' This function takes a code as input and uses OpenAIR's chat_completion
+#' This function takes a code as input and uses TheOpenAIR's chat_completion
 #' function to generate an explanation for the code.
 #'
 #' @param code A character string that represents the code that the user wants
 #' to explain.
-#' @param ... Additional arguments to pass to OpenAIR's chat_completion
+#' @param ... Additional arguments to pass to TheOpenAIR's chat_completion
 #'
 #' @return A character string that represents the explanation for the code.
 #'
@@ -19,12 +19,12 @@ explain_code <- function(code, ...) {
     sprintf(fmt = explain_code_input$content[2], code)
 
   # Chat
-  resp <- OpenAIR::chat_completion(explain_code_input, ...)
-  total_tokens_used <- OpenAIR::usage(resp)$total_tokens
+  resp <- TheOpenAIR::chat_completion(explain_code_input, ...)
+  total_tokens_used <- TheOpenAIR::usage(resp)$total_tokens
   message("Total tokens used: ", total_tokens_used)
 
   # Process response
-  msg_resp <- OpenAIR::messages(resp)
+  msg_resp <- TheOpenAIR::messages(resp)
   explanation <- msg_resp$content
 
   return(explanation)

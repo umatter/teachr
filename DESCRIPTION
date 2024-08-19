@@ -7,17 +7,16 @@ Description: Get feedback on your R code and exercises, autograde exercises, cre
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
     dplyr,
     lifecycle,
-    OpenAIR,
+    TheOpenAIR,
     readr
 Remotes:
-    umatter/OpenAIR
+    umatter/TheOpenAIR
 URL: https://umatter.github.io/teachr
 LazyData: true
-

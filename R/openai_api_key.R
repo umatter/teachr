@@ -4,7 +4,7 @@
 #' current R session. It takes the API key as an input and stores it as an
 #' environment variable, allowing other functions to access the key when needed.
 #'
-#' This function is only a wrapper around the function from OpenAIR, see
+#' This function is only a wrapper around the function from TheOpenAIR, see
 #' \url{https://github.com/umatter/openair} for more information.
 #'
 #' @param api_key A character string containing the OpenAI API key.
@@ -23,5 +23,5 @@
 #'
 #' @export
 openai_api_key <- function(api_key) {
-  OpenAIR::openai_api_key(api_key)
+  TheOpenAIR::openai_api_key(api_key)
 }
