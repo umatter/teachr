@@ -21,8 +21,8 @@
 #' @export
 compare_solutions <- function(attempt_file, solution_file, ...) {
   # Load the user's solution and the intended solution
-  solution_list <- source(solution_file, local = TRUE)
-  attempt_list <- source(attempt_file, local = TRUE)
+  solution_list <- source(system.file(solution_file, package = "teachr"), local = TRUE)
+  attempt_list <- source(system.file(attempt_file, package = "teachr"), local = TRUE)
 
     # Apply the user's solution to the inputs
   inputs <- solution_list$value$inputs
