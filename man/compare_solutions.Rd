@@ -13,7 +13,7 @@ that contains the user's solution.}
 \item{solution_file}{A character string that represents the path to the file
 that contains the intended solution.}
 
-\item{...}{Additional arguments to pass to OpenAIR's chat_completion}
+\item{...}{Additional arguments to pass to TheOpenAIR's chat_completion}
 }
 \value{
 A character string that compares the user's solution to the intended

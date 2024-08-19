@@ -10,13 +10,13 @@ add_comments(code, ...)
 \item{code}{A character string that represents the code that the user wants
 to comment.}
 
-\item{...}{Additional arguments to pass to OpenAIR's chat_completion}
+\item{...}{Additional arguments to pass to TheOpenAIR's chat_completion}
 }
 \value{
 A character string that represents the commented code.
 }
 \description{
-This function takes a code as input and uses OpenAIR's chat_completion
+This function takes a code as input and uses TheOpenAIR's chat_completion
 function to generate comments for the code.
 }
 \examples{

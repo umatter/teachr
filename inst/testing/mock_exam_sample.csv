@@ -1,0 +1,88 @@
+type,question,choices,solution
+mc,"From the following statements on character encoding, mark the correct statements.",ASCII is one of several character encodings.;UTF-8 is one of several character encodings.;Character encodings are based on the underlying logic of how computers can understand the alphabet.;Character encodings matter when we want to correctly translate digital data (0s and 1s) into text of a given alphabet/language.,T;T;F;T
+mc,"In csv files, rows of data are indicated by new lines. Therefore…",A special character marks the end of a line. This is why a CSV-parser recognizes when a line ends.;Computers recognize the end of the line because each line contains the same amount of characters;The underlying binary code contains white spaces whenever an end of line occurs;CSV files can only be opened in spreadsheet software like Excel.,T;F;F;F
+mc,"After executing the follwing lines of R code, which value is stored in `a[3]`?
+```{r eval=FALSE}
+a <- c(1:3)
+a <- a*3
+```
+",`3`;`1:3`;`27`;`9`,F;F;F;T
+mc,"Regarding the data semantics (vocabulary used to describe data) introduced in this course, which of the following statements is correct?","A variable contains all values that measure the same underlying attribute across units/observations.;Every observation belongs to a value and a variable.;An observation contains all values measured on the same unit (e.g., a person).;Datasets typically contain more variables than values.",T;F;T;F
+mc,"Look at the following R code and decide which of the corresponding statements is/are correct after executing the code.
+
+```{r eval=FALSE, message=FALSE}
+df <- data.frame(id = c(1:3,1:3),
+                 numbers= c(1.456, 5.784356, 3.123, 8.234, 23.5465, 2.345),
+                 year=c(2017,2017,2017,2018,2018,2018))
+
+df_filtered <- filter(df, numbers < 5 & year == 2017)
+
+numbers_formatted <- format(round(df_filtered$numbers, 2), decimal.mark="","")
+
+
+```","`df_filtered` is a `data.frame` with two rows and three columns.;`numbers_formatted[1]` is equal to `""1,46""`.;`format()` returns character values but accepts numeric values as input;Changing `filter(df, numbers < 5 & year == 2017)` to `filter(df, numbers < 5)` does not change anything in `numbers_formatted` (after running all the code again).",T;T;T;F
+mc,"Look at the following R code and decide which of the corresponding statements is/are correct.
+
+```{r eval=FALSE, message=FALSE}
+ggplot(df, aes(x=A, y=B)) +
+  geom_point(aes(colour=C)) +
+  geom_smooth(colour=""red"", method = ""lm"")
+
+
+```","`df` must be a `data.frame`, `tibble`, or `data.table` with columns `A`, `B`, and `C` in order to make this code work (result in a plot).;`df` must be a `data.frame`, `tibble`, or `data.table` with columns `A`, `B`, `C`, and `red` in order to make this code work (result in a plot).;The line `geom_smooth(colour=""red"", method = ""lm"")` adds an additional layer to the plot, displayed on top of what `geom_point(aes(colour=C))` generates.;The resulting plot will have a legend.",T;F;T;T
+one_correct,What is the binary value 10001001 in hexadecimal value?,8A;88;98;89,89
+one_correct,"Look at the following line of code. Which of the four statements about the code is correct? 
+
+``<html><head><title>alpha</title></head><head><body>beta</body></head></html>``",The code represents a basically correctly specified HTML-document;All tags occurring in the code are valid HTML tags;'alpha' and 'beta' are HTML-tag attributes;The `<title>` tag should be placed in between the `<body>` tags in order to make this code a valid HTML document,All tags occurring in the code are valid HTML tags
+one_correct,"The following R code was executed on the command line and the corresponding error occurred. 
+
+`read_csv(""data/file1.csv"")`
+
+`Error: 'data/file1.csv' does not exist in current working directory ('/home/user/my_projects').`
+
+Which of the following statements is correct in this context (assuming `file.csv` actually is stored somewhere on this computer‘s harddrive)?
+","`read_csv()` fails to parse `file.csv` because the wrong column delimiter is used (commas).;`read_csv()` is not the right R function to import `file.csv`.;`file.csv` is generally not a valid file name.;Given the current working directory of this R session, the relative path ""data/file1.csv"" is wrong and `read_csv()` therefore does not find the file.","Given the current working directory of this R session, the relative path ""data/file1.csv"" is wrong and `read_csv()` therefore does not find the file."
+one_correct,Which of the following statements about ‚tidy‘ data is correct?,"Data stored in csv-format is generally referred to as ‚tidy data‘.;`tibbles` can only contain tidy data.;When a csv-file is imported with `read_csv()`, the function issues a warning if the data imported is not tidy.;Datasets in wide format are generally not considered ‚tidy‘. ",Datasets in wide format are generally not considered ‚tidy‘. 
+one_correct,"Look at the following R code and decide which of the corresponding statements is correct after executing the code (assuming `tidyverse` is loaded).
+
+```{r eval=FALSE, message=FALSE}
+df_c <- data.frame(id = c(1:3,1:3),
+                   money_spent= c(1000, 2000, 6000, 1500, 3000, 5500),
+                   currency = c(""CHF"", ""CHF"", ""USD"", ""EUR"", ""CHF"", ""USD""),
+                   year=c(2017,2017,2017,2018,2018,2018))
+
+df_filtered <-  filter(df_c, currency == ""CHF"" )
+
+df_summary  <- summarise(df_filtered, 
+          total = sum(money_spent),
+          N_obs = n())
+
+
+```",The last line of code will cause an error.;`df_summary$total` is equal to `3000`.;`df_summary$N_obs is equal to `6`.;df_summary$N_obs is equal to `3`.,df_summary$N_obs is equal to `3`.
+one_correct,"Look at the following R code and decide which of the corresponding statements is correct after executing the code.
+
+
+```{r eval=FALSE, message=FALSE}
+DF   <-  mutate(df, difference = income_2018 -   income_2017)
+
+```",`df` is in long format.;`DF` will have less columns than `df`.;`difference` is a column of type `character`.;`income_2018` and `income_2017` refer to columns in `df`. ,`income_2018` and `income_2017` refer to columns in `df`.
+tf,"Data Science is typically a combination of substantive expertise in a field (e.g. Economics), skills in mathematics and statistics, as well as programming skills to handle data.",,T
+tf,1GB = 1000 x 1000 x 1000 x 16 bits,,F
+tf,`for`-loops are typically used in a situation where a sequence of commands needs to be executed for a well-known number of times.,,T
+tf,"The following line of R code will return `""bnn""`. 
+
+```{r eval=FALSE}
+str_split(""banana"", pattern= ""a"")
+```
+",,F
+tf,API is a data format used to exchange hierarchical data over the web.,,F
+tf,"The following lines of R code will not result in a warning message. However, the resulting plot will only show the canvas and axes, but no actual data values:
+
+```{r eval=FALSE, message=FALSE}
+
+data(""swiss"")
+library(tidyverse)
+
+ggplot(swiss, aes(x=Agriculture, y=Examination))
+
+```",,T

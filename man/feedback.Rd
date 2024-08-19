@@ -13,7 +13,7 @@ to accomplish.}
 \item{code}{A character string that represents the code that the user has
 written.}
 
-\item{...}{Additional arguments to pass to OpenAIR's chat_completion}
+\item{...}{Additional arguments to pass to TheOpenAIR's chat_completion}
 }
 \value{
 A data frame with two columns:
@@ -27,7 +27,7 @@ line of code.
 \description{
 This function takes two arguments: task and code. It returns a processed
 feedback data frame based on the user input of code and task. The feedback
-is obtained by using OpenAIR's chat_completion function and processing the
+is obtained by using TheOpenAIR's chat_completion function and processing the
 response.
 }
 \examples{
