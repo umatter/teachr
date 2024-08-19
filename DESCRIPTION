@@ -17,6 +17,6 @@ Imports:
     TheOpenAIR,
     readr
 Remotes:
-    umatter/TheOpenAIR
+    umatter/OpenAIR
 URL: https://umatter.github.io/teachr
 LazyData: true
